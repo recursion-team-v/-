@@ -3,9 +3,11 @@
 ## 成果物
 
 - [ボムボムパニック](https://bombompanic.vercel.app/)
-- https://github.com/recursion-team-v/bomb
 
 <img src="uploads/play_movie.gif" style="width: 500px" />
+
+- [Github](https://github.com/recursion-team-v/bomb)
+- [Discord](https://discord.com/channels/684232065423900721/1051945817285599306)
 
 ---
 
