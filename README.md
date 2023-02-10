@@ -2,7 +2,8 @@
 
 ## 成果物
 
-[ボムボムパニック](https://bombompanic.vercel.app/)
+- [ボムボムパニック](https://bombompanic.vercel.app/)
+- https://github.com/recursion-team-v/bomb
 
 <img src="uploads/play_movie.gif" style="width: 500px" />
 
