@@ -48,7 +48,7 @@ Team-v はオンラインでのリアルタイム対戦の実装を最優先と�
 
 **内容**
 
-オンライン対戦の実装にサーバとクライアントが必要な為、モノレポで `frontend` と `backend` を管理し、`frontend` は React + Vite と TypeScript を使用。`backend` はコンパイル言語である Go を推奨していたが、リアルタイムゲームサーバのフレームワークが少ない事とクライアントとの相性が悪い理由として Node.js に変更。また、最低限の CI（github actions）として eslint + prettier を main へ対するプルリク時に実行させる様にした（関連 Issue: [最低限の ci を用意する #4](https://github.com/recursion-team-v/bomb/issues/4)）。
+オンライン対戦の実装にサーバとクライアントが必要な為、モノレポで frontend と backend を管理し、frontend は React + Vite と TypeScript を使用。backend はコンパイル言語である Go を推奨していたが、リアルタイムゲームサーバのフレームワークが少ない事とクライアントとの相性が悪い理由として Node.js に変更。また、最低限の CI（github actions）として eslint + prettier を main へ対するプルリク時に実行させる様にした（関連 Issue: [最低限の ci を用意する #4](https://github.com/recursion-team-v/bomb/issues/4)）。
 
 **課題**
 
@@ -62,7 +62,7 @@ Team-v はオンラインでのリアルタイム対戦の実装を最優先と�
 
 **内容**
 
-ホスティング環境は `frontend` と `backend` で以下を使用することにした。
+ホスティング環境は frontend と backend で以下を使用することにした。
 
 - frontend:
   - vercel
