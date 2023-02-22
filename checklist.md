@@ -16,7 +16,7 @@
 - フロントエンドは Vercel、Netlify など
 - バックエンドは Google Cloud Run、AWS、Render など
 
-
+<br />
 
 また、開発を進める中で、
 #### 6. 毎週末にその週行った作業をまとめて全チームと共有する
