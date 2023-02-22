@@ -52,7 +52,7 @@ Team-v はオンラインでのリアルタイム対戦の実装を最優先と�
 
 **直面した問題**
 
-- CI で prettier が変更内容を自動的に commit してくれず（おそらくレポへ対する権限の問題）、 CI を管理するするボットを contributor として追加し、そのアカウント情報を commit 時に設定する事で解決
+- CI で prettier が変更内容を自動的に commit してくれず（おそらくレポへ対する権限の問題）、 CI を管理するボットを contributor として追加し、そのアカウント情報を commit 時に設定する事で解決
 
 ```yml
 prettier:
