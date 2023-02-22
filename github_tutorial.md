@@ -31,8 +31,8 @@ git-flow とは Git におけるリポジトリの分岐モデルであり、ル
 
 ## 2. 開発の流れ
 
-### 2.1 Issue を作って課題のタスク分けを行う
-![Screen Shot 2022-06-13 at 22 16 26](https://user-images.githubusercontent.com/66197642/173498886-b6fd3f9b-5f9e-4207-a8f1-42e00458152c.png)
+### 2.1 - Issue を作って課題のタスク分けを行う
+![Screenshot 2023-02-22 at 9 53 41](https://user-images.githubusercontent.com/45121253/220492780-2d96796f-e5bb-448f-a144-b70ee7b68fc0.png)
 
 参考リンク
 - [Issueの作成方法](https://docs.github.com/ja/issues/tracking-your-work-with-issues/creating-an-issue)
@@ -42,7 +42,7 @@ git-flow とは Git におけるリポジトリの分岐モデルであり、ル
 
 <br />
 
-### 2.2 Issue に対する ```feature``` ブランチを ```develop``` から切る
+### 2.2 - Issue に対する ```feature``` ブランチを ```develop``` から切る
 
 ```
 git switch develop
@@ -50,13 +50,13 @@ git pull
 git switch -c feature/#50_add_cpu
 ```
 
-tips
+**tips**
 - 最新の ```develop``` を pull してから ```feature``` ブランチを切りましょう
 - ```feature``` ブランチ名を ```feature/#[Issue 番号]_XXXXXX``` に統一することでどの Issue に対するブランチなのかが明確になります
 
 <br />
 
-### 2.3 ```feature``` ブランチで開発する
+### 2.3 - ```feature``` ブランチで開発する
 
 ```
 git add .
@@ -64,14 +64,19 @@ git status
 git commit -m "#50 add random CPU"
 ```
 
-tips
-- コミット時のメッセージを ```#[Issue 番号] XXXXXX``` に統一することで Issue とコミットを紐づけられます
+**tips**
+- コミット時のメッセージを ```#[Issue 番号] XXXXXX``` に統一することで Issue とコミットを紐付けられます
 
 <br />
 
-### 2.4 開発終了後、```develop``` へプルリクを作成する
+### 2.4 - 開発終了後、```develop``` へプルリクを作成する
 
 ```
 git push origin feature/#50_add_cpu
 ```
 
+![Screenshot 2023-02-22 at 9 52 23](https://user-images.githubusercontent.com/45121253/220492595-a6dafad3-aa0b-460b-9cc7-6355f7335ae3.png)
+
+**tips**
+- プルリクで今回の目的や実装の概要を書いてどのような変更を行なったのか説明しましょう
+- ```closes #50``` などとプルリクに追記することでマージされた際 Issue を自動的に close することも出来ます
