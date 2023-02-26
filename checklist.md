@@ -19,15 +19,18 @@
 
 <br />
 
-#### 3. チームメンバーと Git の[管理の仕方](https://github.com/recursion-team-v/team-v-devlog/blob/main/github_tutorial.md)を共有し、レポジトリを作成する
+#### 3. チームメンバーと Git の[管理の仕方](https://github.com/recursion-team-v/team-v-devlog/blob/main/github_tutorial.md)を共有し、Organization と レポジトリを作成する
 
 <br />
 
 #### 4. 最低限の開発環境を構築する
 - 使用する言語
-- 使用するフレームワーク
+- 使用するフレームワーク（Vue、React など）
 - 使用する CI (husky、github actions など）
 - Linter とコードフォーマッターの設定（eslint、prettier など）
+
+<br />
+
 #### 5. deploy 環境を決める
 - フロントエンドは Vercel、Netlify など
 - バックエンドは Google Cloud Run、AWS、Render など
@@ -38,8 +41,10 @@
 #### 6. 毎週末にその週行った作業をまとめて全チームと共有する
 レポジトリに ```dev-log.md``` を作成し、毎週末更新する。
 内容としては、
-```
-1. 達成したこと
-2. 苦労していること（直面している問題）
+1. やったこと
+ - その週に実装した内容
+2. 苦労していること（直面した問題）
+ - その週に苦労・直面した問題
+ - 解決できた場合その解決策も追記する
 3. 今後の課題
-```
+ - 次週までに達成する内容・機能
