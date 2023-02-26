@@ -48,3 +48,6 @@
  - 解決できた場合その解決策も追記する
 3. 今後の課題
  - 次週までに達成する内容・機能
+
+例:
+![Screenshot 2023-02-26 at 15 04 02](https://user-images.githubusercontent.com/45121253/221395047-6684e758-501a-4fbd-ac88-791fb3f054f4.png)
