@@ -52,7 +52,7 @@ Team-v はオンラインでのリアルタイム対戦の実装を最優先と�
 
 **直面した問題**
 
-- CI で prettier が変更内容を自動的に commit してくれず（おそらくレポへ対する権限の問題）、 CI を管理するボットを contributor として追加し、そのアカウント情報を commit 時に設定する事で解決
+1. CI で prettier が変更内容を自動的に commit してくれず（おそらくレポへ対する権限の問題）、 CI を管理するボットを contributor として追加し、そのアカウント情報を commit 時に設定する事で解決
 
 ```yml
 prettier:
@@ -167,8 +167,8 @@ prettier:
 - サーバ・クライアントで秒間 60 回の更新（60FPS）
 
 **直面した問題**
-- Matter.js の衝突判定の callback に渡される引数の型が不明である（関連 Issue: [Game: 衝突判定 #50](https://github.com/recursion-team-v/bomb/issues/50)）
-- サーバでプレイヤー動作を管理しているため、クライアントでのプレイヤーの移動がスムーズじゃない
+1. Matter.js の衝突判定の callback に渡される引数の型が不明である（関連 Issue: [Game: 衝突判定 #50](https://github.com/recursion-team-v/bomb/issues/50)）
+2. サーバでプレイヤー動作を管理しているため、クライアントでのプレイヤーの移動がスムーズじゃない
   - クライアント側で線形補間を使用してプレイヤーの位置を予測することで、プレイヤーの移動をスムーズにし、より連続的に描画できる様にした
   
 ```ts
@@ -200,7 +200,7 @@ this.y = Math.ceil(Phaser.Math.Linear(this.y, this.serverY, 0.35));
 ](https://github.com/recursion-team-v/bomb/pull/130)）
 
 **直面した問題**
-- 爆弾の同期
+1. 爆弾の同期
   - 爆弾を設置する場合の通信フローは以下のようになっている。
 
   <img src="uploads/bomb_sync_architecture1.png" style="width: 500px" />
@@ -242,3 +242,48 @@ export const GAME_STATE = {
 2. Ready? ボタンでゲーム開始の準備ができ、いつでも始めて OK という ```READY``` 状態
 3. 入室している全 client が ```READY``` 状態になった場合サーバでゲームを開始して ```PLAYING``` 状態
 4. ゲーム終了時に ```FINISHED``` 状態
+
+**直面した問題**
+1. 誘爆の同期処理
+- 誘爆の場合下の図のように爆弾が爆発する直前に、クライアントから爆弾設置のリクエストが送られてくると、（爆風の範囲内であれば）まだクライアントに同期していない爆弾も爆発してしまう。
+
+<img width="600" alt="20230217005058" src="https://user-images.githubusercontent.com/45121253/221391847-d0065521-a5c8-4fdc-aec6-38dcc7e24df6.png">
+
+- そこで各クライアントとサーバ間で「いつ爆発させるのか？」だけではなく 「いつ爆弾を設置するのか？」 を含めた情報を同時に送り、クライアントの画面に出現するタイミングと爆発するタイミングを両方同期するようにした。
+
+<img width="600" alt="20230217004053" src="https://user-images.githubusercontent.com/45121253/221391890-9b8ffd5c-c119-4064-9d9a-e936904412e1.png">
+
+**課題**
+
+↑優先
+- ゲームスタートしてからタイマースタートしてほしい
+- ゲームのアセットを入れ替える
+- リザルトのバグ修正
+- CPU 組み込み
+
+<br />
+
+### 01/26 - タッチアップ
+
+**やったこと**
+
+![215282387-64b98417-3c72-4069-bb61-288eab4fa98d_AdobeExpress](https://user-images.githubusercontent.com/45121253/221392134-7c79c996-910b-43a1-a1f9-a2be696220e2.gif)
+
+ - ゲームアセットの差し替え
+ - ロビー周りの修正
+   - 部屋に参加している人数を表示
+   - 各プレイヤーが Ready かどうかをロビーで表示
+ - 敵AIの導入
+
+**直面した問題**
+1. Google Cloud Run での CPU 使用率
+- 敵AIを追加した事で、一人で対戦する場合敵AIは三人追加され、GCPのメトリックスを検証すると CPU 使用率がかなり高くなっている
+
+<img width="300" alt="image" src="https://user-images.githubusercontent.com/45121253/221392299-6aa49f07-72d0-4cf6-8e16-e4631f30efa5.png">
+
+- また、複数部屋を開いた場合動作しない時も発生
+- シングルスレッドで複数の部屋と敵AIを管理しているため、かなりCPUに負荷がかかっている
+- 考えられる解決策として、
+  - 敵AIの計算量を下げる
+  - Node.js の Worker Threads モジュールを活用してマルチスレッドにする（ただし、現状シングルスレッドであることを前提に作っているので、マルチスレッドで正しく動くかは不明であり、作業量もかなり多い）
+  - redis などの外部ストレージに状態を持たせて部屋ごとに cloud run を分ける
