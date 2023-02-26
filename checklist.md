@@ -5,8 +5,24 @@
 
 下記は**一周目**に達成すべき事項
 #### 1. 必ず週2回全メンバーが集まれる時間を決めて、ミーティングを行う
-#### 2. 今回の課題で達成したい要件（requirements）を決める 
+
+<br />
+
+#### 2. 課題の要件定義（requirements）をまとめる
+追記する内容として、
+1. 目的
+2. 機能要件:「実装する機能」に関する要件
+3. 非機能要件: アプリの性能など「実装する機能以外」に関する要件
+
+例:
+![Screenshot 2023-02-26 at 14 44 08](https://user-images.githubusercontent.com/45121253/221394469-798c80fb-bbba-4164-97f5-523dbf77ccd5.png)
+
+<br />
+
 #### 3. チームメンバーと Git の[管理の仕方](https://github.com/recursion-team-v/team-v-devlog/blob/main/github_tutorial.md)を共有し、レポジトリを作成する
+
+<br />
+
 #### 4. 最低限の開発環境を構築する
 - 使用する言語
 - 使用するフレームワーク
