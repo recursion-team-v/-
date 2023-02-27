@@ -28,6 +28,7 @@
 - 使用するフレームワーク（Vue、React など）
 - 使用する CI (husky、github actions など）
 - Linter とコードフォーマッターの設定（eslint、prettier など）
+- 使用する API、ライブラリなど（候補でもOK）
 
 <br />
 
@@ -35,10 +36,18 @@
 - フロントエンドは Vercel、Netlify など
 - バックエンドは Google Cloud Run、AWS、Render など
 
+### 6. 技術スタックの構成図
+- 使用予定の技術スタックをビジュアル化する
+
+例:
+![architecture drawio](https://user-images.githubusercontent.com/45121253/221457716-2e6b952d-7d92-49be-9c02-538d7969d1f7.png)
+
+
+
 <br />
 
 また、開発を進める中で、
-### 6. 毎週末にその週行った作業をまとめて全チームと共有する
+### 7. 毎週末にその週行った作業をまとめて全チームと共有する
 レポジトリに ```dev-log.md``` を作成し、毎週末更新する。
 内容としては、
 1. やったこと
