@@ -15,6 +15,7 @@
 3. 非機能要件: アプリの性能など「実装する機能以外」に関する要件
 
 例:
+
 ![Screenshot 2023-02-26 at 14 44 08](https://user-images.githubusercontent.com/45121253/221394469-798c80fb-bbba-4164-97f5-523dbf77ccd5.png)
 
 <br />
@@ -36,13 +37,14 @@
 - フロントエンドは Vercel、Netlify など
 - バックエンドは Google Cloud Run、AWS、Render など
 
+<br />
+
 ### 6. 技術スタックの構成図
 - 使用予定の技術スタックをビジュアル化する
 
 例:
+
 ![architecture drawio](https://user-images.githubusercontent.com/45121253/221457716-2e6b952d-7d92-49be-9c02-538d7969d1f7.png)
-
-
 
 <br />
 
@@ -59,4 +61,5 @@
  - 次週までに達成する内容・機能
 
 例:
+
 ![Screenshot 2023-02-26 at 15 04 02](https://user-images.githubusercontent.com/45121253/221395047-6684e758-501a-4fbd-ac88-791fb3f054f4.png)
