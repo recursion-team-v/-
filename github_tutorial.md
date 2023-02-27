@@ -42,7 +42,7 @@ git-flow とは Git におけるリポジトリの分岐モデルであり、ル
 
 ### 2.2 - Repository を作成する
 
-Organization 内で新しいレポジトリを作成し、下記のブランチ保護設定を ```develop``` と ```main``` に対して行います。
+Organization 内で新しいレポジトリを作成し、下記のブランチ保護設定を ```develop``` と ```main``` に対して追加します。
 
 ![Screenshot 2023-02-26 at 12 25 42](https://user-images.githubusercontent.com/45121253/221390751-b60a42d3-f8b1-4cf6-9e95-2a76c6c189f3.png)
 
