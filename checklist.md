@@ -58,6 +58,8 @@
 
 例:
 
+![activity_diagram](https://user-images.githubusercontent.com/45121253/223055482-8b875d4f-0632-4778-8b7c-0ebae904e3b5.png)
+
 <br />
 
 また、開発を進める中で、
