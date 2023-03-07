@@ -56,7 +56,11 @@
 - クラス図: システムを構成するクラスとそれらの関係を表現する
 - アクティビティ図: 連続する「実行」の遷移、つまり一連の ｢手続き｣ を表現する
 
-例:
+クラス図の例:
+
+![class_diagram](https://user-images.githubusercontent.com/45121253/223355327-e679bc24-bd5e-4830-833c-8ffb70f203c9.png)
+
+アクティビティ図の例:
 
 ![activity_diagram](https://user-images.githubusercontent.com/45121253/223055482-8b875d4f-0632-4778-8b7c-0ebae904e3b5.png)
 
