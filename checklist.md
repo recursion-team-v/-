@@ -46,9 +46,6 @@
 
 <img width="1444" alt="Screenshot 2023-03-07 at 16 49 39" src="https://user-images.githubusercontent.com/45121253/223359870-afe1e4ec-2be7-47c1-9d78-779f9b5e15c9.png">
 
-参考リンク
-- [VSCodeで draw.io を使ってフローチャートやネットワーク図を作る](https://qiita.com/riku-shiru/items/5ab7c5aecdfea323ec4e)
-
 <br />
 
 ### 7. 技術スタックの構成図
